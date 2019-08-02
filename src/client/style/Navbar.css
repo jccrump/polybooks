@@ -1,0 +1,48 @@
+.sidenav-wrapper{
+    height: 100%;
+    width: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(49, 49, 49);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.nav-list{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-link{
+    color: white;
+    list-style: none;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(70, 70, 70, 0.933);
+    padding: 5px;
+    border-radius: 50%;
+}
+.nav-link a{
+    color: white;
+    
+    text-align: center;
+}
+.toggle-wrapper{
+    border-bottom: 1px solid white;
+}
+.toggle-btn{
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}

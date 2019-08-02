@@ -1,2 +1,0 @@
-# polybooks
-Invoice Management Software

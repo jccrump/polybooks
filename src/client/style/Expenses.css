@@ -1,0 +1,46 @@
+.expense-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: 
+}
+.expense-list-wrapper{
+    width: 100%;
+    background-color: white;
+    margin: 0 20px;
+    border: 1px solid rgb(182, 182, 182);
+    padding: 10px;
+}
+.expense-filter-category{
+    text-align: left;
+}
+.expense-filter-category ul{
+    list-style: none;
+    padding: 0px;
+}
+.expense-filter-category li{
+    font-size: 12px;
+}
+.expense-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    
+}
+.expense-table th{
+    padding: 10px 0px;
+}
+.expense-table-row{
+    border: 1px solid rgb(182, 182, 182);
+
+}
+.expense-table-row td{
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(182, 182, 182);
+}
+.search-input{
+    padding: 10px;
+}

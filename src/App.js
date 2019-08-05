@@ -6,7 +6,7 @@ import Vendor from './components/Vendor/Vendor'
 import Office from './components/Office/Office'
 import Field from './components/Field/Field'
 import Home from './components/Home/Home'
-
+import Register from './components/Register/Register'
 
 export default class App extends Component {
   constructor(){
@@ -30,6 +30,7 @@ export default class App extends Component {
           }}/>
           <Route path="/field" component={Field}/>
           <Route path="/vendor" component={Vendor}/>
+          <Route path="/register" component={Register}/>
         </Switch>
       </BrowserRouter>
     );

@@ -6,10 +6,13 @@ export default class ExpenseFilters extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filters: [{ expenseStatus: [] }]
+      filters: [{ expenseStatus: [] }],
+      query: "",
+      searchedExpenses: []
     };
   }
-  filterExpenses(expenses, n) {
+
+  filterExpenses = (expenses, n) => {
     if (n < this.state.filters.length) {
       let x = expenses.filter(expense => {
         for (let key in this.state.filters[n]) {
@@ -23,13 +26,13 @@ export default class ExpenseFilters extends Component {
             }
           }
         }
-        return;
+        return null;
       });
       return this.filterExpenses(x, n + 1);
     } else {
       return expenses;
     }
-  }
+  };
   handleFilterClick = (filter, value) => {
     let stateCopy = this.state;
 
@@ -57,12 +60,32 @@ export default class ExpenseFilters extends Component {
       ...stateCopy
     });
   };
+  handleSearchChange = e => {
+    let query = e.target.value;
+    let searchedExpenses = this.props.expenses.filter(expense => {
+      if (
+        JSON.stringify(expense)
+          .toLowerCase()
+          .indexOf(query) >= 0
+      ) {
+        return true;
+      }
+      return false;
+    });
+    this.setState({ searchedExpenses });
+  };
   render() {
-    let filteredExpenses = this.filterExpenses(this.props.expenses, 0);
+    let filteredExpenses;
+    if (this.state.searchedExpenses.length < 1) {
+      filteredExpenses = this.filterExpenses(this.props.expenses, 0);
+    } else {
+      filteredExpenses = this.filterExpenses(this.state.searchedExpenses, 0);
+    }
     return (
       <div className="expense-wrapper">
         <div className="expense-filter-wrapper">
           <input
+            onChange={this.handleSearchChange}
             className="search-input"
             type="text"
             placeholder="Search Expenses"

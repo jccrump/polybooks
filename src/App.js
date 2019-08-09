@@ -6,6 +6,7 @@ import Vendor from "./components/Vendor/Vendor";
 import Office from "./components/Office/Office";
 import Field from "./components/Field/Field";
 import Home from "./components/Home/Home";
+import Admin from "./components/Admin/Admin";
 import Register from "./components/Register/Register";
 
 export default class App extends Component {
@@ -21,6 +22,7 @@ export default class App extends Component {
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/admin" component={Admin} />
           <Route
             path="/office"
             render={() => {

@@ -21,13 +21,14 @@ export default class FilterCategory extends Component {
     }
   };
   render() {
-    let subFilters = this.props.subFilters.map(filter => {
+    let subFilters = this.props.filterNames.map(filter => {
+      let index = this.props.filterNames.indexOf(filter);
       return (
-        <li key={`${this.props.subFilters.indexOf(filter)}`}>
+        <li key={index}>
           <input
             type="checkbox"
-            value={filter}
-            onClick={() => this.props.filterClick(this.props.dbName, filter)}
+            value={this.props.filterValues[index]}
+            onClick={() => this.props.addFilter(this.props.filterValues[index])}
           />
           {filter}
         </li>
@@ -36,7 +37,7 @@ export default class FilterCategory extends Component {
     return (
       <div className="expense-filter-category">
         <p className="expense-filter-title" onClick={this.toggleDropdown}>
-          {this.props.filterName}
+          {this.props.title}
         </p>
         {this.state.toggle && <ul>{subFilters}</ul>}
       </div>

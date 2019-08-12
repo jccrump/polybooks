@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import FilterCategory from "./FilterCategory";
 import axios from "axios";
+import CustomerList from './CustomerList'
 
 export default class CustomerFilters extends Component {
   constructor(props) {
     super(props);
     this.state = {
       filterTypes: ["Project Manager"],
-      filters: [""],
+      filters: [],
       projectManagers: [],
       filteredCustomers: []
     };
@@ -31,25 +32,24 @@ export default class CustomerFilters extends Component {
       this.setState({ filters: [...copyFilters] });
     }
   };
-  filterCustomers = (customers, n) => {
-    if (n < this.state.filters.length) {
-      let x = customers.filter(customer => {
-        console.log(customers[n]);
-        if (customer[n]._id == this.state.filters[n]) {
-          return customer;
-        } else {
-          return false;
-        }
-      });
-      console.log(x, n);
-      return this.filterCustomers(x, n + 1);
+  filterCustomers = (customers) => {
+
+    if (this.state.filters.length < 1) {
+      return customers
     } else {
-      return customers;
+      let filtered = []
+      for (let i = 0; i < customers.length; i++) {
+        for (let j = 0; j < this.state.filters.length; j++) {
+          if (customers[i].project_manager === this.state.filters[j]) {
+            filtered.push(customers[i])
+          }
+        }
+      }
+      return filtered
     }
   };
   render() {
-    let filteredCustomers = this.filterCustomers(this.props.customers, 0);
-    console.log(filteredCustomers);
+    let filteredCustomers = this.filterCustomers(this.props.customers);
     let names = this.state.projectManagers.map(person => {
       return `${person.first_name} ${person.last_name.toUpperCase()[0]}.`;
     });
@@ -67,8 +67,8 @@ export default class CustomerFilters extends Component {
       );
     });
     return (
-      <div className="expense-wrapper">
-        <div className="expense-filter-wrapper">
+      <div className="customer-wrapper">
+        <div className="customer-filter-wrapper">
           <input
             onChange={this.handleSearchChange}
             className="search-input"
@@ -77,6 +77,7 @@ export default class CustomerFilters extends Component {
           />
           {filterTypes}
         </div>
+        <CustomerList customers={filteredCustomers} />
       </div>
     );
   }

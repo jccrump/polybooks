@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CustomerFilters from "./CustomerFilters";
 import axios from "axios";
+import '../../../style/Customers.css'
 
 export default class Customers extends Component {
   constructor(props) {

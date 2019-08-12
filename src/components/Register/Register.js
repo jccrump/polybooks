@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../../style/Register.css'
 
 export default class Register extends Component {
@@ -15,7 +15,7 @@ export default class Register extends Component {
                         <input type="password" name="password"></input>
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" name="confirmPassword"></input>
-                        <button type="submit">Register</button> 
+                        <button type="submit">Register</button>
                     </form>
                     Already have an account? <Link to="/login">Login Here!</Link>
                 </div>

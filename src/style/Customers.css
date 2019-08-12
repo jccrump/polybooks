@@ -1,0 +1,67 @@
+.customer-list-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100%;
+}
+.customer-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.customer-main-wrapper{
+    margin-left: 20px;
+    width: 100%;
+}
+.customer-btn-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.customer-card{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    max-width: 250px;
+    height: 150px;
+    background-color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    border: 1px solid #9e9e9e;
+    cursor: pointer;
+}
+.customer-card-title{
+    padding: 10px;
+    background-color: rgb(98, 98, 98);
+    color: white;
+    display: flex;
+    font-weight: 600;
+    flex-direction: row;
+    justify-content: space-between
+}
+.customer-card-body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+.customer-card-body p{
+    margin: 5px;
+}
+.customer-add-btn{
+    padding: 10px;
+    color: white;
+    background-color: rgb(51, 111, 223);
+    border: none;
+}
+.customer-expense-counter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

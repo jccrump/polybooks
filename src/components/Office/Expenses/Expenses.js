@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import ExpenseFilters from "./ExpenseFilters";
 import "../../../style/Expenses.css";
 import axios from "axios";
+import loading from "../../../assets/loading.gif";
 
 export default class Expenses extends Component {
   constructor(props) {
     super(props);
     this.state = {
       query: "",
-      expenses: []
+      expenses: [],
+      loading: true
     };
   }
   componentDidMount() {
@@ -18,7 +20,8 @@ export default class Expenses extends Component {
       })
       .then(response => {
         this.setState({
-          expenses: response.data
+          expenses: response.data,
+          loading: false
         });
       })
       .catch(error => {
@@ -26,6 +29,10 @@ export default class Expenses extends Component {
       });
   }
   render() {
-    return <ExpenseFilters expenses={this.state.expenses} />;
+    if (this.state.loading) {
+      return <img src={loading} />;
+    } else {
+      return <ExpenseFilters expenses={this.state.expenses} />;
+    }
   }
 }

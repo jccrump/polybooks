@@ -1,67 +1,150 @@
-.customer-list-wrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    height: 100%;
+.customer-list-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .customer-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.customer-main-wrapper{
-    margin-left: 20px;
-    width: 100%;
+.customer-main-wrapper {
+  margin-left: 20px;
+  width: 100%;
 }
-.customer-btn-list{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+.customer-btn-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-.customer-card{
-    width: 100%;
-    text-decoration: none;
-    color: black;
-    max-width: 250px;
-    height: 150px;
-    background-color: white;
-    margin-right: 20px;
-    margin-top: 20px;
-    border: 1px solid #9e9e9e;
-    cursor: pointer;
+.customer-card {
+  text-decoration: none;
+  color: black;
+  height: 150px;
+  background-color: white;
+  margin: 0px 5px;
+  margin-top: 20px;
+  border: 1px solid #9e9e9e;
+  flex-grow: 2;
+  flex-basis: 300px;
 }
-.customer-card-title{
-    padding: 10px;
-    background-color: rgb(98, 98, 98);
-    color: white;
-    display: flex;
-    font-weight: 600;
-    flex-direction: row;
-    justify-content: space-between
+.customer-card-title {
+  padding: 10px;
+  background-color: rgb(98, 98, 98);
+  color: white;
+  display: flex;
+  font-weight: 600;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.customer-card-body{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    text-align: left;
-    justify-content: center;
-    align-items: center;
+.customer-dashboard-link {
+  color: white;
+  text-decoration: none;
 }
-.customer-card-body p{
-    margin: 5px;
+.customer-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
 }
-.customer-add-btn{
-    padding: 10px;
-    color: white;
-    background-color: rgb(51, 111, 223);
-    border: none;
+.customer-card-body p {
+  margin: 5px;
 }
-.customer-expense-counter{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.customer-add-btn {
+  padding: 10px;
+  color: white;
+  background-color: rgb(51, 111, 223);
+  border: none;
+  cursor: pointer;
+}
+.add-customer-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.add-customer-form-wrapper {
+  background-color: white;
+  border: 1px solid rgb(124, 124, 124);
+  padding: 20px;
+  margin-top: 20px;
+}
+.add-customer-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.customer-expense-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.customer-dashboard-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.customer-dashboard {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 20px;
+  background-color: white;
+  border: 1px solid rgb(131, 131, 131);
+}
+.customer-dashboard-name {
+  background-color: rgb(56, 56, 56);
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+.customer-dashboard-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.customer-project-list {
+  border-top: 1px solid rgb(131, 131, 131);
+}
+.info-left {
+  border-right: 1px solid rgb(167, 167, 167);
+  flex-grow: 2;
+  padding: 20px;
+}
+.info-left table {
+  text-align: left;
+}
+.info-right {
+  flex-grow: 2;
+  padding: 20px;
+}
+.modal-overlay {
+  background-color: rgb(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 2;
+}
+.customer-dashboard-modal {
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 10vh;
+  width: 80vw;
+}
+.customer-dashboard-modal-wrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }

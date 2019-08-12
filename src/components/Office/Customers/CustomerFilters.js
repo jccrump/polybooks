@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import FilterCategory from "./FilterCategory";
 import axios from "axios";
-import CustomerList from './CustomerList'
+import CustomerList from "./CustomerList";
+import loading from "../../../assets/loading.gif";
 
 export default class CustomerFilters extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ export default class CustomerFilters extends Component {
       filterTypes: ["Project Manager"],
       filters: [],
       projectManagers: [],
-      filteredCustomers: []
+      filteredCustomers: [],
+      filterLoading: true
     };
   }
   componentDidMount() {
@@ -19,7 +21,7 @@ export default class CustomerFilters extends Component {
         headers: { Authorization: localStorage.getItem("access-token") }
       })
       .then(res => {
-        this.setState({ projectManagers: [...res.data] });
+        this.setState({ projectManagers: [...res.data], filterLoading: false });
       });
   }
   addFilter = id => {
@@ -32,20 +34,19 @@ export default class CustomerFilters extends Component {
       this.setState({ filters: [...copyFilters] });
     }
   };
-  filterCustomers = (customers) => {
-
+  filterCustomers = customers => {
     if (this.state.filters.length < 1) {
-      return customers
+      return customers;
     } else {
-      let filtered = []
+      let filtered = [];
       for (let i = 0; i < customers.length; i++) {
         for (let j = 0; j < this.state.filters.length; j++) {
           if (customers[i].project_manager === this.state.filters[j]) {
-            filtered.push(customers[i])
+            filtered.push(customers[i]);
           }
         }
       }
-      return filtered
+      return filtered;
     }
   };
   render() {
@@ -66,19 +67,27 @@ export default class CustomerFilters extends Component {
         />
       );
     });
-    return (
-      <div className="customer-wrapper">
-        <div className="customer-filter-wrapper">
-          <input
-            onChange={this.handleSearchChange}
-            className="search-input"
-            type="text"
-            placeholder="Search Customers"
+    if (this.state.filterLoading) {
+      return <img src={loading} />;
+    } else {
+      return (
+        <div className="customer-wrapper">
+          <div className="customer-filter-wrapper">
+            <input
+              onChange={this.handleSearchChange}
+              className="search-input"
+              type="text"
+              placeholder="Search Customers"
+            />
+            {filterTypes}
+          </div>
+          <CustomerList
+            refresh={this.props.refresh}
+            projectManagers={this.state.projectManagers}
+            customers={filteredCustomers}
           />
-          {filterTypes}
         </div>
-        <CustomerList customers={filteredCustomers} />
-      </div>
-    );
+      );
+    }
   }
 }

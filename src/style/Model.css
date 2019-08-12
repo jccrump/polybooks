@@ -1,0 +1,22 @@
+.modal-title {
+  border-bottom: 1px solid rgb(128, 128, 128);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.close-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.input-group .trades {
+  display: flex;
+  flex-direction: row;
+}

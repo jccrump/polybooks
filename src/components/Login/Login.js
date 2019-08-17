@@ -42,6 +42,7 @@ export default class Login extends Component {
   }
 
   render() {
+    document.body.style.backgroundColor = '#eee'
     return (
       <div className="register-form-wrapper">
         <h1>POLYBOOKS</h1>

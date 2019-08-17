@@ -1,0 +1,78 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.main-holder{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo-holder{
+    margin-top: 18vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width:800px;
+}
+.logo-holder img{
+    max-width: 100px;
+}
+.logo-holder h1{
+    font-size: 3em;
+    color: black;
+}
+.main-desc{
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.main-desc p{
+    line-height: 2;
+    padding: 12px;
+    text-align: center;
+    max-width: 400px;
+}
+.main-desc form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background-color: #eee;
+    border: 1px solid rgb(196, 196, 196);
+}
+.main-desc form input{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 3px;
+}
+.main-desc form button{
+    width: 107%;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+}
+@media only screen and (max-width: 600px) {
+    .logo-holder{
+        margin-top: 5vh;
+    }
+  }
